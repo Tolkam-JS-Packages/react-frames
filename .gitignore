@@ -1,0 +1,11 @@
+# Ignore IDE/hidden/OS cache files
+.*
+*~
+
+# Keep some hiddens
+!/.gitignore
+!/.travis.yml
+
+# NPM
+**/node_modules/*
+!**/node_modules/.gitkeep

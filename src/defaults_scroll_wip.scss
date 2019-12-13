@@ -1,0 +1,42 @@
+// default styling
+// !importants are required for layout
+div.rAgXf {
+    display: flex;
+    flex-wrap: nowrap;
+
+    overflow: hidden;
+
+    &--legacy {
+        //overflow: hidden!important;
+    }
+
+    &--h {
+        overflow-x: auto;
+        //scroll-snap-type: x mandatory;
+    }
+
+    &--v {
+        overflow-y: auto;
+        //scroll-snap-type: y mandatory;
+    }
+
+    &--allow-scroll {
+        > div {
+            //scroll-snap-align: none;
+        }
+    }
+
+    //&--allow-scroll.rAgXf--h {
+    //    scroll-snap-type: y proximity;
+    //}
+    //
+    //&--allow-scroll.rAgXf--h {
+    //    scroll-snap-type: x proximity;
+    //}
+}
+
+div.rAgXf > div {
+    flex: 1 0 auto;
+    width: 100%;
+    scroll-snap-align: center;
+}

@@ -1,0 +1,22 @@
+// default styling
+div.rAgXf {
+    overflow: hidden;
+
+    // container
+    > div {
+        display: flex;
+        flex-wrap: nowrap;
+
+        // frames
+        > div {
+            flex: 0 0 auto;
+
+            touch-action: inherit;
+            will-change: transform;
+        }
+    }
+
+    &.is-moving > div {
+        transition: transform ease 0.4s;
+    }
+}
