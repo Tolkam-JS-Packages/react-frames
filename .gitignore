@@ -3,9 +3,13 @@
 *~
 
 # Keep some hiddens
-!/.gitignore
-!/.travis.yml
+!.gitignore
+!.gitkeep
+!.travis.yml
+!.gitlab-ci.yml
 
 # NPM
 **/node_modules/*
-!**/node_modules/.gitkeep
+
+# local lock
+./package-lock.json

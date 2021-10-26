@@ -3,7 +3,6 @@
         "module": "es6",
         "moduleResolution": "node",
         "target": "es6",
-//      "lib": ["es6", "dom"], // Defaults for --target ES6: DOM,ES6,DOM.Iterable,ScriptHost
         "skipLibCheck": true,
         "skipDefaultLibCheck": true,
         "sourceMap": false,
@@ -17,7 +16,7 @@
         "noUnusedParameters": false,
         "suppressImplicitAnyIndexErrors": true,
         "experimentalDecorators": true,
-        "jsx": "react"
+        "jsx": "react-jsx"
     },
     "exclude": [
         "./node_modules"

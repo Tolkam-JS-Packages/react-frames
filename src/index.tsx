@@ -1,5 +1,4 @@
-import * as React from 'react';
-import { Children, ReactChildren, ReactNode, PureComponent } from 'react';
+import { Children, ReactChildren, ReactNode, PureComponent, HTMLProps } from 'react';
 import { classNames } from '@tolkam/lib-utils-ui';
 import { throttle } from '@tolkam/lib-utils';
 import { getLongestDuration } from '@tolkam/lib-css-events';
@@ -283,7 +282,7 @@ export default class Frames extends PureComponent<IProps, any> {
             case(that.PAN_NEXT) :
                 const framePos = -activeIndex * frameSize;
 
-                // switch no next frame as soon as panned to it
+                // switch to next frame as soon as panned to it
                 if (Math.abs(delta) > frameSize) {
                     delta > 0 ? that.prev() : that.next();
                     hammer.stop(true);
@@ -449,7 +448,7 @@ export default class Frames extends PureComponent<IProps, any> {
     }
 }
 
-interface IProps extends React.HTMLAttributes<Frames> {
+interface IProps extends HTMLProps<Frames> {
 
     // dragging enabled
     draggable?: boolean;

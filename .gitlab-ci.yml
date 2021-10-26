@@ -1,0 +1,15 @@
+# publishes a tag to the NPM registry of the current project
+stages:
+    - build
+
+publish:
+    image: node:latest
+    stage: build
+    only:
+        - tags
+    script:
+        - projectId=${NPM_COMMON_PROJECT_ID} || ${CI_PROJECT_ID}
+        - echo "//$CI_SERVER_HOST/api/v4/projects/${projectId}/packages/npm/:_authToken=${CI_JOB_TOKEN}">.npmrc
+        - echo "@tolkam:registry=https://$CI_SERVER_HOST/api/v4/projects/${projectId}/packages/npm/">>.npmrc
+        - npm version ${CI_COMMIT_TAG} --git-tag-version=false
+        - npm publish
